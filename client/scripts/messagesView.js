@@ -12,10 +12,21 @@ var MessagesView = {
 
   render: function() {
     // TODO: Render _all_ the messages.
+    console.log(Messages._data);
+    //get all the data
+    //iterate through the data
+    for (var i = 0; i < Messages._data.length; i++) {
+      var stringifyMessage = MessageView.render(Messages._data[i]);
+      $('#chats').append(stringifyMessage);
+    }
+    //convert it to strings of html
+    //append it to the dom
   },
 
   renderMessage: function(message) {
     // TODO: Render a single message.
+    Messages.add(message);
+    $('#chats').append(MessageView.render(message));
   },
 
   handleClick: function(event) {

@@ -13,10 +13,14 @@ var RoomsView = {
 
   render: function() {
     // TODO: Render out the list of rooms.
+    for (var keys in Rooms._data) {
+      $('#rooms select').append('<div>' + Rooms._data[keys] + '</div>');
+    }
   },
 
   renderRoom: function(roomname) {
     // TODO: Render out a single room.
+    $('#rooms select').append('<div>' + roomname + '</div>');
   },
 
   handleChange: function(event) {
