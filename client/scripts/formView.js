@@ -5,6 +5,7 @@
 var FormView = {
 
   $form: $('form'),
+  $rooms: $('#rooms'),
 
   initialize: function() {
     FormView.$form.on('submit', FormView.handleSubmit);
@@ -16,7 +17,24 @@ var FormView = {
 
     // TODO: Currently, this is all handleSubmit does.
     // Make this function actually send a message to the Parse API.
-  
+    var roomData = function() {
+      if (FormView.$rooms.find()) {
+        return FormView.$rooms.find(); // NEED TO MODIFY LATER TO RETURN ROOM NAME
+      }
+    };
+
+    var submittedMessage = {
+      username: App.username,
+      text: FormView.$form.find('input[type=text]')[0].value,
+      roomname: 'test'
+    };
+
+    console.log('messageText:', FormView.$form.find('input[type=text]')[0].value);
+    console.log('roomData:', roomData());
+
+    // use POST request to send it to server
+    Parse.create(submittedMessage, MessagesView.renderMessage(submittedMessage));
+
     console.log('click!');
   },
 

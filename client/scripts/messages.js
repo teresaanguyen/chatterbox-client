@@ -22,8 +22,9 @@ var Messages = {
 
   // TODO: Define methods which allow you to retrieve from,
   // add to, and generally interact with the messages.
-  add: function (message) {
-    Messages._data.push(message);
-  }
+
+  // add: function (message) {
+  //   Messages._data.push(message);
+  // }
 
 };

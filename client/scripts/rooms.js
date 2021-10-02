@@ -19,7 +19,7 @@ var Rooms = {
         Rooms._data[roomname] = Messages._data[i][roomname];
       }
     }
-    console.log('roomdata here', Rooms._data);
+    //console.log('roomdata here', Rooms._data);
   }
 
 };
